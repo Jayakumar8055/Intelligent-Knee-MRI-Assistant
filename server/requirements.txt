@@ -1,0 +1,12 @@
+Flask
+Flask-PyMongo
+Flask-Bcrypt
+letter
+Flask-JWT-Extended
+Flask-Mail
+Flask-Cors
+pymongo
+numpy
+reportlab
+torch
+torchvision

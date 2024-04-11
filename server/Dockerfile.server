@@ -1,0 +1,29 @@
+# Stage 2: Python server
+FROM python:3.10-slim AS server
+
+# Install system dependencies
+RUN apt-get update && apt-get install -y python3-tk
+
+# Set the working directory in the container
+WORKDIR /app
+
+# Set Environment variables
+ENV FLASK_APP=app.py
+ENV FLASK_ENV=development
+
+# Copy requirements.txt to the working directory
+COPY requirements.txt ./
+
+# Install server dependencies with retries and increased timeout
+RUN pip install --no-cache-dir --default-timeout=100 -r requirements.txt
+
+# Copy the server application code to the container
+COPY . .
+
+EXPOSE 5000
+
+# Specify the command to run on container start
+CMD ["python", "app.py", "torch_utils.py"]
+
+
+

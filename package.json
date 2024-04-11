@@ -1,0 +1,8 @@
+{
+  "dependencies": {
+    "@mikecousins/react-pdf": "^7.0.4"
+  },
+  "devDependencies": {
+    "acorn": "^8.11.3"
+  }
+}

@@ -1,0 +1,95 @@
+# version: '3.9'
+
+# services:
+#   # Client service
+#   client:
+#     build:
+#       context: .
+#       dockerfile: Dockerfile.client
+#     ports:
+#       - "5173:80"  # Map container port 80 to host port 5173
+#     networks:
+#       - app-network
+
+#   # Server service
+#   server:
+#     build:
+#       context: .
+#       dockerfile: Dockerfile.server
+#     ports:
+#       - "5000:5000"
+#     networks:
+#       - app-network
+
+# networks:
+#   app-network:
+#     driver: bridge
+
+# version: '3.9'
+
+# services:
+#   # Client service
+#   client:
+#     build:
+#       context: ./client
+#       dockerfile: Dockerfile.client
+#     ports:
+#       - "5173:5173"
+#     volumes:
+#       - ./client:/app
+#     networks:
+#       - app-network
+
+#   # Server service
+#   server:
+#     build:
+#       context: ./server
+#       dockerfile: Dockerfile.server
+#     ports:
+#       - "5000:5000"
+#     volumes:
+#       - ./server:/app
+#     environment:
+#       - FLASK_ENV=development
+#     networks:
+#       - app-network
+
+# networks:
+#   app-network:
+#     driver: bridge
+
+
+
+version: '3.9'
+
+services:
+  # Client service
+  client:
+    build:
+      context: ./client
+      dockerfile: lttsregistry.azurecr.io/lt-client:1.0.0
+    command: ["sh", "-c", "npm install && npm run dev --host=0.0.0.0"]
+    ports:
+      - "5173:5173"
+    volumes:
+      - ./client:/app
+    networks:
+      - app-network
+
+  # Server service
+  server:
+    build:
+      context: ./server
+      dockerfile: lttsregistry.azurecr.io/lt-server:1.0.0
+    ports:
+      - "5000:5000"
+    volumes:
+      - ./server:/app
+    environment:
+      - FLASK_ENV=development
+    networks:
+      - app-network
+
+networks:
+  app-network:
+    driver: bridge
