@@ -12,11 +12,10 @@ Our system leverages deep learning methods to automatically interpret and classi
 - Upon image upload, the system generates predictions using PyTorch models tailored for ACL, Meniscus, and Abnormality detection across axial, coronal, and sagittal planes.
 - Predictions are compiled into comprehensive reports alongside patient details, streamlining the diagnosis process and enhancing documentation.
 
-## PRE-TRAINED MACHINE LEARNING MODELS
+## PRE-TRAINED MODELS:
 
-Please note that the pre-trained machine learning models used in this project are not included in the GitHub repository due to their large file sizes. However, you can obtain these models separately from the following location:
+Please note that the pre-trained machine learning models used in this project are not included in the GitHub repository due to their large file sizes. However, if you require access to these models, please feel free to reach out me at [jayakumarb8055@gmail.com](mailto:jayakumarb8055@gmail.com) and I will be happy to provide them to you.
 
-[Pre-trained models repository](https://github.com/ahmedbesbes/mrnet)
 
 Once downloaded, place the model files in the `models` directory of the project to use them for inference.
 
