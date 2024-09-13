@@ -5,7 +5,7 @@ Our system leverages deep learning methods to automatically interpret and classi
 ## KEY FEATURES:
 
 - Utilizes deep learning models trained on a dataset from Stanford University to interpret knee MRI images.
-- React.js frontend for user-friendly interaction, with a separate portal for doctors and patients.
+- React.js frontend for user-friendly interaction, with a separate portal for doctors and radiologists.
 - Python backend powered by Flask, PyTorch, TensorFlow, and MongoDB for efficient data processing and storage.
 - Docker containerization for easy deployment and scalability.
 - Radiologist panel allows input of patient ABHA Number, retrieving patient details and facilitating MRI image upload.
